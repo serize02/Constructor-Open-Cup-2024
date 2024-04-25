@@ -1,0 +1,23 @@
+Problem A:
+In this problem the only thing we would have to do is exactly what is described in the order. We would make a loop going through the times in which the variable that indicates the current temperature is verified. If it is between the parameters L and R given in the input, we stop the loop and we would have a valid time as an answer. Otherwise, if it is greater than R we would decrease the temperature by the difference between the current time and the next. If it is less than L we increase it by this same value and we maintain this process until we go through the entire array or find a solution. If there is not one, we output -1.
+
+Problem B:
+In this task the idea was to realize that one way to construct the sequence of numbers to eliminate can be by going through the numbers from N to 1 and if the number i is not found in array B we add it to the answer. This is convenient since it does not alter the positions of the numbers in the array [1...N].
+
+Problem C:
+We can verify that if N is greater than or equal to 2 in this problem the solution would be the total sum of the initial array since there will always be a way to accumulate said sum in the first position of the array by doing a finite number of operations. For N equal to 2, the solution would be a[1]+1 since we can increase it with the first operation, but there would be no possible way to carry out the second operation since we would have to decrease this same value.
+
+Problem D:
+We organize the entry skills and difficulties arrays and we have to ensure that for each contestant there is a problem not previously taken of a difficulty lower than their skill but at the same time this problem must have a difficulty greater than the skill of the previous contestant. Therefore, it follows that the minimum number of tasks to select is N, one for each contestant, otherwise it would not be possible to have a fair competition.
+
+Problem E:
+In this problem we have to realize that we are going to have N monsters with damage 1, after killing the first we will have N-1 with damage 2, after killing the second we will have N-3 with damage 3 and like this from now on until we finish off all of them. My solution consists of ordering the initial array in increasing order and an array with the previous values ​​ordered in descending order. The answer to the problem would be the sum of the multiplication of the values ​​i of the two arrangements, making the damage-time relationship minimal.
+
+Problema F:
+Utilizé un algoritmo recursivo con memorización. Si el tamaño de la lista, llamémoslo X es igual a K entonces retornamos 1 ya que es una de las formas de la respuesta, si es menor que K entonces retornamos 0. Para una cantidad X, si esta es par vamos a tener la misma cantidad de números pares que impares por lo que retornaríamos sería 2 veces el valor de la función en X/2, y si es impar entonces sería la función en X/2 + la función en X/2+1. Para hacer este algoritmo más óptimo y para no obtener TLE utilicé la memorización, esto evita que tenga que calcular la función en el mismo valor más de una vez.
+
+Problem F:
+I used a recursive algorithm with memoization. If the size of the list, let's call it X, is equal to K then we return 1, if it is lower than K we return 0. For a quantity x, if it is even we will have the same number of even numbers as odd numbers, so we would return 2 times the value of the function in X/2 and if it is odd then it would be the function at x/2 + the function at x/2+1. To make this algorithm more optimal and to not get TLE I used memoization, this prevents me from having to calculate the function on the same value more than once.
+
+Problem G:
+In this problem I grouped the positions of the different values contained in the initial array. This allows me to work more optimally on all the ways to select K elements of the same value one followed by the other and check if it is better to eliminate the differences between these positions, what would be the elements that are in the middle of them in the array , or if it is more convenient to add some elements of equal value at the beginning and also eliminate those in the middle.
